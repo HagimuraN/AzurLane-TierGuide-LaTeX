@@ -1,0 +1,83 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[russian, english]{babel}
+\usepackage[a4paper, margin=1in, headsep=30pt, top=3cm]{geometry}
+\usepackage[explicit]{titlesec}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage[parfill]{parskip}
+\usepackage{graphicx}
+\usepackage{xparse}
+\usepackage{addfont}
+\usepackage{titling}
+\usepackage{ulem}
+\usepackage{titleps,kantlipsum}
+
+\newpagestyle{intro}{%
+  \headrule
+  \sethead{\MakeUppercase{\thesection\quad \sectiontitle}}{}{}
+  \setfoot{}{\thepage}{}
+}
+\newpagestyle{content}{%
+  \headrule
+  \sethead{\MakeUppercase{\thesection\quad \sectiontitle}}{}{\scshape\subsectiontitle}
+  \setfoot{}{\thepage}{}
+}
+\settitlemarks{section,subsection}
+
+\addfont[1.25]{OT1}{hge}{\hge} % load extra font
+
+\newcommand{\customtitle}{
+    \thispagestyle{empty}
+    \begin{center}
+        \vspace*{3cm}
+        \Huge {\hge \game}
+        \vspace{3cm}
+        \hrule height 1pt
+        \LARGE\scshape {\hge \thetitle}\\[1cm]
+        \large {\hge \subtitle}\\[1cm]
+        \vspace{-0.5cm}
+        \hrule height 1pt
+        \vfill
+        {\hge \thedate}
+        \clearpage
+    \end{center}
+    \newpage
+    \cleardoublepage
+    \setcounter{page}{1}
+}
+
+\NewDocumentCommand{\entry}{ m O{default.png} m m m  }{
+    \begin{minipage}[t]{0.15\textwidth}
+        \raisebox{\dimexpr-\height+\ht\strutbox\relax}{\includegraphics[width=\textwidth]{pics/#2}}
+    \end{minipage}
+    \hfill\vline\hfill
+    \begin{minipage}[t]{0.80\textwidth}
+        \vspace*{-10pt}
+        \subsubsection{#1}
+        \textbf{Skills:}\\[0.5em]
+        #3\\[1em]
+        \textbf{Description: #4}\\[0.5em]
+        #5
+    \end{minipage}\\\vspace{0.5cm}
+
+}
+% 1. Ship Name
+% (2). filename
+% 3. Skill Text
+% 4. Description Title
+% 5. Description Text
+
+%% Title formatting
+\titleformat{\section}{\normalfont\scshape\bfseries\Large}{\thesection}{1em}{#1}
+\titleformat{\subsection}{\normalfont\scshape\bfseries\large}{\thesubsection}{1em}{#1}
+\titleformat{\subsubsection}{\normalfont\scshape\bfseries}{}{0em}{\uline{#1}}
+
+
+
+\begin{document}
+\input{aljp_tier_guide}
+%\input{alen_tier_guide}
+
+\end{document}
