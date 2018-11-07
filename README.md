@@ -1,12 +1,12 @@
 # Azur Lane Tier Guide LaTeX
 Azur Lane JP and EN tier guide formatted with LaTeX.
 
-Text taken from:
-<https://pastebin.com/ZMBi8g6R>
-<https://pastebin.com/bffW2aNa>
+Text taken from: 
+<https://pastebin.com/ZMBi8g6R> 
+<https://pastebin.com/bffW2aNa> 
 (06-11-2018)
 
-Images taken from:
+Images taken from: 
 <https://azurlane.koumakan.jp/List_of_Ships_by_Image>
 
 Use `\entry` macro to add ships:
