@@ -18,6 +18,6 @@ Use `\entry` macro to add ships:
 ```
 
 ## Compilation Note
-Comment/uncomment the `\input{...}` part to choose between JP/EN tier guide.
+Comment/uncomment the `\input{...}` part in main.tex to choose between JP/EN tier guide.
 
 Cyrillic package needed.
